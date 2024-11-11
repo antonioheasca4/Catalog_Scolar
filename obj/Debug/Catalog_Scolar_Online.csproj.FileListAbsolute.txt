@@ -1,0 +1,16 @@
+C:\Users\bianc\Desktop\Catalog_Scolar_Online\bin\Debug\Catalog_Scolar_Online.exe.config
+C:\Users\bianc\Desktop\Catalog_Scolar_Online\bin\Debug\Catalog_Scolar_Online.exe
+C:\Users\bianc\Desktop\Catalog_Scolar_Online\bin\Debug\Catalog_Scolar_Online.pdb
+C:\Users\bianc\Desktop\Catalog_Scolar_Online\obj\Debug\Catalog_Scolar_Online.csproj.AssemblyReference.cache
+C:\Users\bianc\Desktop\Catalog_Scolar_Online\obj\Debug\Login.g.cs
+C:\Users\bianc\Desktop\Catalog_Scolar_Online\obj\Debug\App.g.cs
+C:\Users\bianc\Desktop\Catalog_Scolar_Online\obj\Debug\Catalog_Scolar_Online_MarkupCompile.cache
+C:\Users\bianc\Desktop\Catalog_Scolar_Online\obj\Debug\Catalog_Scolar_Online_MarkupCompile.lref
+C:\Users\bianc\Desktop\Catalog_Scolar_Online\obj\Debug\Login.baml
+C:\Users\bianc\Desktop\Catalog_Scolar_Online\obj\Debug\Catalog_Scolar_Online.g.resources
+C:\Users\bianc\Desktop\Catalog_Scolar_Online\obj\Debug\Catalog_Scolar_Online.Properties.Resources.resources
+C:\Users\bianc\Desktop\Catalog_Scolar_Online\obj\Debug\Catalog_Scolar_Online.csproj.GenerateResource.cache
+C:\Users\bianc\Desktop\Catalog_Scolar_Online\obj\Debug\Catalog_Scolar_Online.csproj.CoreCompileInputs.cache
+C:\Users\bianc\Desktop\Catalog_Scolar_Online\obj\Debug\Catalog_Scolar_Online.exe
+C:\Users\bianc\Desktop\Catalog_Scolar_Online\obj\Debug\Catalog_Scolar_Online.pdb
+C:\Users\bianc\Desktop\Catalog_Scolar_Online\obj\Debug\App.baml
