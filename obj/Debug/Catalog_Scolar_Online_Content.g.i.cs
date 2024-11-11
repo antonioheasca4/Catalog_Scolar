@@ -8,8 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/email.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/lock.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/scholar.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/close1.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/minimize.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/user.png")]
 
 
