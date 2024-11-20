@@ -16,7 +16,13 @@ public class DB
     {
         if (instance == null)
         {
+
             instance = new DB();
+            if (!instance.Connect())
+            {
+                MessageBox.Show("Failed to connect to the database.", "Connection Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
         }
         return instance;
     }

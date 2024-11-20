@@ -33,7 +33,7 @@
                 <StackPanel VerticalAlignment="Center">
                     <TextBlock Text="Sign Up" Style="{StaticResource titleText}" />
                     <TextBlock Text="Enter your personal info and create new account to connect us."  Style="{StaticResource normalText}" Opacity="0.8" Margin="20 30" />
-                    <Button Content="Sign Up" Style="{StaticResource button}" />
+                    <Button Content="Sign Up" Style="{StaticResource button}" Click="Button_Click_1"/>
                 </StackPanel>
             </Grid>
         </Border>
@@ -75,15 +75,30 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
 
-                        <Image Source="/Images/lock.png" Height="20"/>
-                        <TextBlock x:Name="textPassword" MouseDown="textPassword_MouseDown"  Text="Password" Style="{StaticResource textHint}" />
-                        <PasswordBox x:Name="txtPassword" PasswordChanged="txtPassword_PasswordChanged" Style="{StaticResource textBox}"/>
+                        <!-- Iconița pentru lacăt -->
+                        <Image Source="/Images/lock.png" Height="20" Grid.Column="0" VerticalAlignment="Center"/>
+
+                        <!-- Textul pentru hint "Password" -->
+                        <TextBlock x:Name="textPassword" Grid.Column="1" MouseDown="textPassword_MouseDown" Text="Password" Style="{StaticResource textHint}" VerticalAlignment="Center"/>
+
+                        <!-- TextBox vizibil când parola este afișată -->
+                        <TextBox x:Name="txtPasswordVisible" Text="{Binding ElementName=txtPassword, Path=Password}" Style="{StaticResource textBox}" Visibility="Collapsed" Grid.Column="1" VerticalAlignment="Center"/>
+
+                        <!-- PasswordBox pentru introducerea parolei -->
+                        <PasswordBox x:Name="txtPassword" PasswordChanged="txtPassword_PasswordChanged" Style="{StaticResource textBox}" Grid.Column="1" VerticalAlignment="Center"/>
+
+                        <!-- Butonul pentru afișarea/ascunderea parolei -->
+                        <Image Source="/Images/no_read.png" Height="20" Grid.Column="2" VerticalAlignment="Center" Cursor="Hand" MouseDown="TogglePasswordVisibility"/>
                     </Grid>
                 </Border>
 
-                <Button Content="Sing In" Click="Button_Click"  Style="{StaticResource mainButton}" />
+                <TextBlock x:Name="ConnectionErrorText" Text="Wrong email or password!" Foreground="Red" Visibility="Collapsed" Style="{StaticResource textHint}" Margin="70 0 0 0" />
+
+
+                <Button Content="Sign In" Click="Button_Click"  Style="{StaticResource mainButton}" />
             </StackPanel>
         </Border>
 
