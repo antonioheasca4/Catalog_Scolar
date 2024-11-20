@@ -86,7 +86,7 @@ namespace Catalog_Scolar_Online
             string password = txtPassword.Password;
 
             if(email.Length>0 && password.Length>0)
-            using (SqlCommand checkEmailPassword = new SqlCommand("SELECT UtilizatorID FROM [Online_School_Catalog].[dbo].[Utilizator] WHERE Email = @Email AND Parola = @Parola", db.GetSqlConnection()))
+            using (SqlCommand checkEmailPassword = new SqlCommand("SELECT UtilizatorID FROM [Online_School_Catalog].[dbo].[Utilizatori] WHERE Email = @Email AND Parola = @Parola", db.GetSqlConnection()))
             {
                 checkEmailPassword.Parameters.AddWithValue("@Email", email);
                 checkEmailPassword.Parameters.AddWithValue("@Parola", password);

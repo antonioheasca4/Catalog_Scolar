@@ -1,10 +1,8 @@
 ﻿using Catalog_Scolar_Online.UserControls;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Navigation;
 
 namespace Catalog_Scolar_Online
 {
@@ -63,102 +61,9 @@ namespace Catalog_Scolar_Online
 
         }
 
-
-        private bool verifyAccount(string email)
-        {
-            Online_School_CatalogDataContext osc = new Online_School_CatalogDataContext();
-
-
-            return osc.Conturis.Any(c => c.Email == email);
-        }
-
-        private bool insertUtilizator(string selectedRole)
-        {
-            Online_School_CatalogDataContext osc = new Online_School_CatalogDataContext();
-
-            bool userExists = osc.Utilizatoris.Any(u => u.Email == tb_email.Text);
-
-            if(!userExists)
-            {
-                Utilizatori user = new Utilizatori();
-                user.Email = tb_email.Text;
-                user.Parola = tb_password.Text;
-
-                switch (selectedRole)
-                {
-                    case "Profesor":
-                        user.Rol = 2;
-                        break;
-                    case "Elev":
-                        user.Rol = 0;
-                        break;
-                    case "Părinte":
-                        user.Rol = 1;
-                        break;
-                }
-
-                osc.Utilizatoris.InsertOnSubmit(user);
-
-                osc.SubmitChanges();
-
-                MessageBox.Show("Utilizatorul a fost adaugat cu succes");
-                return true;
-            }
-            else
-            {
-                MessageBox.Show($"Utilizatorul cu emailul {tb_email.Text} exista");
-                return false;
-            }
-             
-        }
-        private void insertProfesor()
-        {
-            Online_School_CatalogDataContext osc = new Online_School_CatalogDataContext();
-
-            int userID =
-                (int)(from u in osc.Utilizatoris
-                      where u.Email == tb_email.Text
-                      select u.UtilizatorID).First();
-
-            if(userID <= 0)
-            {
-                MessageBox.Show("Eroare UserID");
-            }
-            Profesori profesor = new Profesori
-            { 
-                UtilizatorID = userID,
-                Nume = tb_lastName.Text,
-                Prenume = tb_firstName.Text,
-                Grad = tb_grad_didactic.Text,
-            };
-
-            osc.Profesoris.InsertOnSubmit(profesor);
-            osc.SubmitChanges();
-
-            MessageBox.Show($"Profesorul {profesor.Nume} a fost adaugat cu succes");
-
-        }
         private void btn_Save_Click(object sender, RoutedEventArgs e)
         {
-            string selectedRole = (cb_role.SelectedItem as ComboBoxItem)?.Content.ToString();
-            if(verifyAccount(tb_email.Text))
-            {
-                if (insertUtilizator(selectedRole))
-                    switch (selectedRole)
-                    {
-                        case "Profesor":
-                            insertProfesor();
-                            break;
-                        case "Elev":
-                            break;
-                        case "Părinte":
-                            break;
-                    }
-            }
-            else
-            {
-                MessageBox.Show("Emailul nu se afla in lista de Conturi!!!");
-            }
+            
         }
 
         private void cb_role_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)

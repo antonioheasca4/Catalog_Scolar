@@ -92,11 +92,11 @@
                         <TextBlock Text="Grad Didactic" Style="{StaticResource text}"/>
                         <uc:MyTextBox x:Name="tb_grad_didactic" Grid.Column="1" Hint="Lector"/>
 
-                        <!--<TextBlock Text="Vechime(An)" Style="{StaticResource text}"/>
+                        <TextBlock Text="Vechime(An)" Style="{StaticResource text}"/>
                         <uc:MyTextBox x:Name="tb_vechime" Grid.Column="1" Hint="10"/>
 
                         <TextBlock Text="Clasă" Style="{StaticResource text}"/>
-                        <uc:MyTextBox x:Name="tb_clasa_profesor" Grid.Column="1" Hint="9A"/>-->
+                        <uc:MyTextBox x:Name="tb_clasa_profesor" Grid.Column="1" Hint="9A"/>
 
                     </StackPanel>
 

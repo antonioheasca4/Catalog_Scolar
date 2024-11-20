@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -175,6 +175,7 @@
       <HintPath>packages\System.Configuration.ConfigurationManager.8.0.1\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
@@ -200,23 +201,24 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DB.cs" />
+    <Compile Include="Login.xaml.cs" />
     <Compile Include="Note.xaml.cs">
       <DependentUpon>Note.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Online_School_Catalog.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Online_School_Catalog.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Register.xaml.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="StudentWindow.xaml.cs">
       <DependentUpon>StudentWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\MyTextBox.xaml.cs" />
-    <Compile Include="Register.xaml.cs">
-      <DependentUpon>Register.xaml</DependentUpon>
-    </Compile>
     <Compile Include="StringToVisibilityConverter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -234,6 +236,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Online_School_Catalog.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Online_School_Catalog.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Online_School_Catalog.dbml.layout">
+      <DependentUpon>Online_School_Catalog.dbml</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -252,6 +262,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Register.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="StudentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -260,30 +274,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Register.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\close.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="Images\close1.png" />
     <Resource Include="Images\email.png" />
     <Resource Include="Images\lock.png" />
-    <Resource Include="Images\scholar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\close1.png" />
     <Resource Include="Images\minimize.png" />
+    <Resource Include="Images\no_read.png" />
+    <Resource Include="Images\read.png" />
+    <Resource Include="Images\scholar.png" />
     <Resource Include="Images\user.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\user1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\no_read.png" />
-    <Resource Include="Images\read.png" />
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets')" />

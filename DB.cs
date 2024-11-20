@@ -78,7 +78,7 @@ public class DB
 
     //    try
     //    {
-    //        using (SqlCommand checkEmailCommand = new SqlCommand("SELECT COUNT(*) FROM Utilizatori WHERE Email = @Email", db.sqlConnHandle))
+    //        using (SqlCommand checkEmailCommand = new SqlCommand("SELECT COUNT(*) FROM Utilizator WHERE Email = @Email", db.sqlConnHandle))
     //        {
     //            checkEmailCommand.Parameters.AddWithValue("@Email",email);
 
@@ -91,7 +91,7 @@ public class DB
     //        }
 
     //        using (SqlCommand insertCommand = new SqlCommand(
-    //            "INSERT INTO Utilizatori (Email, Parola, Rol) VALUES (@Email, @Password, @Rol)",
+    //            "INSERT INTO Utilizator (Email, Parola, Rol) VALUES (@Email, @Password, @Rol)",
     //            db.sqlConnHandle))
     //        {
     //            insertCommand.Parameters.AddWithValue("@Email", email);
@@ -120,7 +120,7 @@ public class DB
     //            if (Convert.ToInt32(rol) == 1)
     //            {
     //                using (SqlCommand insertCommandprof = new SqlCommand(
-    //                        "INSERT INTO Profesori (Nume,Prenume) VALUES (@LastName, @FirstName)",
+    //                        "INSERT INTO Profesor (Nume,Prenume) VALUES (@LastName, @FirstName)",
     //                        db.sqlConnHandle))
     //                {
     //                    insertCommandprof.Parameters.AddWithValue("@LastName", lastname);

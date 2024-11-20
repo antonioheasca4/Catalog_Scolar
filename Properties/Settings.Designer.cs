@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Catalog_Scolar.Properties {
+namespace Catalog_Scolar_Online.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

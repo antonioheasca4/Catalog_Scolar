@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Online_School_Catalog" Class="Online_School_CatalogDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=Online_School_Catalog;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="Catalog_Scolar_Online.Properties.Settings" SettingsPropertyName="Online_School_CatalogConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Conturi" Member="Conturis">
+    <Type Name="Conturi">
+      <Column Name="ContID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Rol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Profesori" Member="Profesoris">
+    <Type Name="Profesori">
+      <Column Name="ProfesorID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nume" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Prenume" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Grad" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Vechime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UtilizatorID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Utilizatori_Profesori" Member="Utilizatori" ThisKey="UtilizatorID" OtherKey="UtilizatorID" Type="Utilizatori" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Utilizatori" Member="Utilizatoris">
+    <Type Name="Utilizatori">
+      <Column Name="UtilizatorID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Parola" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Rol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ImagineProfil" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="Utilizatori_Profesori" Member="Profesoris" ThisKey="UtilizatorID" OtherKey="UtilizatorID" Type="Profesori" />
+    </Type>
+  </Table>
+</Database>
