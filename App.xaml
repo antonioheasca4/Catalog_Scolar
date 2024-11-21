@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Catalog_Scolar_Online"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-             StartupUri="Login.xaml">
+             StartupUri="View/Login.xaml">
     <Application.Resources>
         
         <Style x:Key="titleText" TargetType="TextBlock">

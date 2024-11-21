@@ -201,7 +201,13 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DB.cs" />
-    <Compile Include="Login.xaml.cs" />
+    <Compile Include="UserControls\BindablePassword.xaml.cs">
+      <DependentUpon>BindablePassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="ViewModel\ViewModelCommand.cs" />
+    <Compile Include="View\Login.xaml.cs" />
     <Compile Include="Note.xaml.cs">
       <DependentUpon>Note.xaml</DependentUpon>
     </Compile>
@@ -254,7 +260,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Login.xaml">
+    <Page Include="UserControls\BindablePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -289,6 +299,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets')" />

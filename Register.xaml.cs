@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
+using Catalog_Scolar_Online.View;
 
 namespace Catalog_Scolar_Online
 {
